@@ -91,7 +91,7 @@ const start = async () => {
 
     await twitterClient.newLogin(telegramClient);
 
-    const runEveryDay = new cron.CronJob('0 30 8 * * *', async () => {
+    const runEveryDay = new cron.CronJob('0 45 8 * * *', async () => {
         const tweet = await twitterClient.client?.v1.tweet(
             words[Math.floor(Math.random() * words.length)]
         ).catch((err) => { console.log(err); });
