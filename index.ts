@@ -1,8 +1,12 @@
 import { LoginResult, TwitterApi } from 'twitter-api-v2';
 import { Bot } from "grammy";
 import { config } from './config';
+import { Server } from './server';
 import cron from 'cron';
 import fs from "fs";
+
+const server = new Server;
+server.start();
 
 const words = fs.readFileSync("words.txt", "utf-8").split("\r");
 
